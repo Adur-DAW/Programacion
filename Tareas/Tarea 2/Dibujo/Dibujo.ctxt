@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Dibujo()
+comment0.text=\nConstructor\ fpara\ objetos\ de\ la\ clase\ Dibujo\n\n
+comment1.target=void\ dibujar()
+comment1.text=\nRealizar\ el\ dibujo\n\n
+comment2.target=void\ setNegroBlanco()
+comment2.text=\nCambiar\ dibujo\ a\ negro/blanco\n\n
+comment3.target=void\ setColor()
+comment3.text=\nCambiar\ dibujo\ para\ ver\ en\ modo\ color\n\n
+numComments=4
