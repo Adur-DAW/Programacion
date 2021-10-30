@@ -59,24 +59,51 @@ public class Calculadora
      * Methods
      */
 
+    private void incrementarTotal() 
+    {
+        this.setTotal(this.getTotalOperaciones() + 1);
+    }
+    
     public double sumar()
     {
+        this.incrementarTotal();
+        
         return this.operando1 + this.operando2;
     }
     
     public double restar()
     {
+        this.incrementarTotal();
+        
         return this.operando1 - this.operando2;
     }
     
     public double multiplicar()
     {
+        this.incrementarTotal();
+        
         return this.operando1 * this.operando2;
     }
     
-    public double dividir()
+    public double dividirReal()
     {
+        this.incrementarTotal();
+        
         return this.operando1 / this.operando2;
+    }
+    
+    public int dividir()
+    {
+        this.incrementarTotal();
+        
+        return (int)(this.operando1 / this.operando2);
+    }
+    
+    public double calcularPotencia()
+    {
+        this.incrementarTotal();
+        
+        return Math.pow(this.operando1, this.operando2);
     }
     
     public void clear()
