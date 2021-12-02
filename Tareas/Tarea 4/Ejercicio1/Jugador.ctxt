@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Jugador
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Jugador\ here.\r\n\ \r\n\ @author\ Adur\ Marques\ Herrero\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=nombre\ sueldo
+comment1.target=Jugador(java.lang.String,\ double)
+comment1.text=\r\n\ Constructor\r\n
+comment2.params=
+comment2.target=java.lang.String\ getNombre()
+comment2.text=\r\n\ Valor\ del\ atributo\ nombre\r\n\r\n\ @param\ \ \ \r\n\ @return\ Atributo\ nombre\r\n
+comment3.params=
+comment3.target=double\ getSueldo()
+comment3.text=\r\n\ Valor\ del\ atributo\ sueldo\r\n\r\n\ @param\ \ \ \r\n\ @return\ Atributo\ sueldo\r\n
+comment4.params=
+comment4.target=int\ getGoles()
+comment4.text=\r\n\ Valor\ del\ atributo\ golesMarcados\r\n\r\n\ @param\ \ \ \r\n\ @return\ Atributo\ golesMarcados\r\n
+comment5.params=
+comment5.target=void\ marcarGol()
+comment5.text=\r\n\ Valor\ del\ atributo\ golesMarcados\r\n\r\n\ @param\ \ \ \r\n\ @return\ Atributo\ golesMarcados\r\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\r\n\ Valor\ del\ atributo\ nombre\r\n\r\n\ @param\ \ \ \r\n\ @return\ Atributo\ nombre\r\n
+numComments=7
