@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Vagon
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Vagon\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=numeroAsientos
+comment1.target=Vagon(int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Vagon\r\n
+comment2.params=numeroAsientos
+comment2.target=int[]\ inicializarAsientos(int)
+comment3.params=
+comment3.target=int\ getCapacidad()
+comment4.params=
+comment4.target=void\ printDetallesVagon()
+comment5.params=
+comment5.target=java.lang.String\ textToString()
+comment6.params=numeroAsiento
+comment6.target=void\ printTicket(int)
+comment7.params=numeroAsiento
+comment7.target=double\ reembolsarAsiento(int)
+comment8.params=
+comment8.target=boolean\ reservarSiguienteAsiento()
+comment9.params=
+comment9.target=double\ getPrecioMedio()
+numComments=10
