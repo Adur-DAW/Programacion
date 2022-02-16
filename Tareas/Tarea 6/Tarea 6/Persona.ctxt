@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=Persona
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Persona\ here.\r\n\ \r\n\ @author\ Adur\ Marques\r\n\ @version\ 1.0.0\r\n
+comment1.params=dia\ mes\ ano\ nombre\ estadoCivil
+comment1.target=Persona(int,\ int,\ int,\ java.lang.String,\ EstadoCivil)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Persona\r\n
+comment2.params=dia\ mes\ ano
+comment2.target=java.util.Calendar\ asignarFecha(int,\ int,\ int)
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment3.params=
+comment3.target=java.lang.String\ getNombre()
+comment4.params=
+comment4.target=EstadoCivil\ getEstadoCivil()
+comment5.params=
+comment5.target=java.lang.String\ getEstadoCivilToString()
+comment6.params=
+comment6.target=java.util.Calendar\ getFechaNacimiento()
+comment7.params=
+comment7.target=java.text.SimpleDateFormat\ getFecha()
+comment8.params=persona
+comment8.target=boolean\ masJovenQue(Persona)
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10
