@@ -20,10 +20,10 @@ public class ConversorRomanos
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Convierte los números romanos a números arábicos
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param String textoRomano
+     * @return int
      */
     public int convertir(String textoRomano)
     {
@@ -31,10 +31,10 @@ public class ConversorRomanos
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Inicializa las relaciones entre los números árabicos y romanos
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return void
      */
     public void inicializar()
     {

@@ -1,4 +1,7 @@
 import java.util.TreeMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.Iterator;
 
 /**
  * Write a description of class GestorRomanos here.
@@ -13,7 +16,7 @@ public class GestorRomanos
     private ConversorRomanos conversor;
 
     /**
-     * Constructor for objects of class GestorRomanos
+     * Constructor
      */
     public GestorRomanos()
     {
@@ -21,10 +24,10 @@ public class GestorRomanos
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Añade un número Romano al mapa ListaArabicos
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param String romano
+     * @return void
      */
     public void añadirRomano(String romano)
     {
@@ -32,24 +35,31 @@ public class GestorRomanos
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Añade todos los números Romanos que le pasemos por parámetro al mapa ListaArabicos
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  String[] romanos
+     * @return void
      */
     public void añadirRomanos(String[] romanos)
     {
-        //Usar el iterator y añadir romano
+        for(String romano: romanos)
+            añadirRomano(romano);
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Muestra por pantalla la lista de números Arabicos
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return void
      */
-    public void escribirListaArabicos(String romano)
+    public void escribirListaArabicos()
     {
-        // Iterator : )
+        Set entrySet = listaArabicos.entrySet();
+        Iterator it = entrySet.iterator();
+
+        while(it.hasNext())
+        {
+          System.out.println(it.next());
+        }
     }
 }

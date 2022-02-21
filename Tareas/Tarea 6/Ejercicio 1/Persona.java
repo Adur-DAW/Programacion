@@ -17,7 +17,7 @@ public class Persona
     /**
      * Constructor for objects of class Persona
      */
-    public Persona(int dia, int mes, int ano, String nombre, EstadoCivil estadoCivil)
+    public Persona(String nombre, EstadoCivil estadoCivil, int dia, int mes, int ano)
     {
         this.nombre = nombre;
         this.estadoCivil = estadoCivil;
@@ -70,6 +70,6 @@ public class Persona
     
     public String toString()
     {
-        return "/n Nombre: " + getNombre() + "/n" + "Estado Civil: " + getEstadoCivil() + "/n" + "Fecha nacimiento: " + getFechaNacimiento();
+        return "\r\n Nombre: " + getNombre() + "\r\n" + "Estado Civil: " + getEstadoCivil() + "\r\n" + "Fecha nacimiento: " + getFecha();
     }
 }

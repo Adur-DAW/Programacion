@@ -1,11 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Calendar;
+import java.util.Iterator;
 
 /**
  * Write a description of class ListaPersonas here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Adur Marques
+ * @version 1.0.0
  */
 public class ListaPersonas
 {
@@ -21,10 +23,10 @@ public class ListaPersonas
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Añadir una persona al ArrayList
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  Persona
+     * @return  void
      */
     public void addPersona(Persona persona) throws Exception
     {
@@ -35,12 +37,11 @@ public class ListaPersonas
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Utilizando un foreach borrar todas las personas solteras
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @return ArrayList<Persona>
      */
-    public ArrayList borrarSolteros()
+    public ArrayList<Persona> borrarSolteros()
     {
         ArrayList<Persona> listaPersonasEliminar = new ArrayList<Persona>();
         
@@ -58,32 +59,48 @@ public class ListaPersonas
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Utilizando el iterador de ArrayList obtener la cantidad de personas divorciadas
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @return int
      */
     public int cuantosDivorciados()
     {
-        return 69;
+        int cantidadPersonasDivorciadas = 0;
+        
+        Iterator<Persona> iterador = listaPersonas.iterator();
+            
+        while (iterador.hasNext()) {
+           if (iterador.next().getEstadoCivil() == EstadoCivil.DIVORCIADO)
+                 cantidadPersonasDivorciadas++;
+        }
+ 
+        return cantidadPersonasDivorciadas;
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Obtener la cantidad de personas que cumplen en determinado mes
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  int
+     * @return int
      */
     public int cumplenEnMes(int mes)
     {
-        return 69;
+        int cantidadPersonasCumplenEnMes = 0;
+        
+        Iterator<Persona> iterador = listaPersonas.iterator();
+            
+        while (iterador.hasNext()) {
+           if (iterador.next().getFechaNacimiento().get(Calendar.MONTH) == mes)
+                 cantidadPersonasCumplenEnMes++;
+        }
+ 
+        return cantidadPersonasCumplenEnMes;
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Obtener la cantidad total de personas en el ArrayList ListaPersonas
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @return int
      */
     public int cuantasPersonas()
     {
@@ -91,10 +108,9 @@ public class ListaPersonas
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Obtener la persona más joven de la lista ListaPersonas
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @return Persona
      */
     public Persona masJoven()
     {
@@ -113,23 +129,27 @@ public class ListaPersonas
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Mostrar las personas
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @return void
      */
     public void printPersonas()
     {
+         System.out.println(toString());
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     *
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @return String
      */
     public String toString()
     {
-        return "Guapo";
+        String texto = "";
+        
+        for (Persona persona: listaPersonas)
+            texto = persona.toString() + "\r\n"; 
+
+        return texto;
     }
 }
