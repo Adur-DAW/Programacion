@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Conferenciante
+comment0.text=\r\n\ Write\ a\ description\ of\ interface\ Conferenciante\ here.\r\n\ \r\n\ @author\ Adur\ Marques\ Herrero\r\n\ @version\ 1.0.0\r\n
+comment1.params=
+comment1.target=java.lang.String\ diaConferencia()
+comment1.text=\r\n\ An\ example\ of\ a\ method\ header\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ \ \ \ the\ result\ produced\ by\ sampleMethod\ \r\n
+numComments=2

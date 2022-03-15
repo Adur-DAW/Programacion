@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=TelefonoSony
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ TelefonoSony\ here.\r\n\ \r\n\ @author\ Adur\ Marques\r\n\ @version\ 1.0.0\r\n
+comment1.params=numeroTelefono
+comment1.target=TelefonoSony(java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ TelefonoSamsung\r\n
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment2.text=\r\n\ \ Devuelve\ una\ representacio\u0301n\ texto\ que\ indica\ la\ marca\ de\ mo\u0301vil\ y\ el\ n\u00FAmero\ de\ tele\u0301fono\r\n\ \r\n\ @param\r\n\ @return\ String\r\n
+numComments=3
