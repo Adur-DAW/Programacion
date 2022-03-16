@@ -2,21 +2,21 @@
 /**
  * Write a description of class ContactoPersonal here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Adur Marques Herrero
+ * @version 1.0.0
  */
-public class ContactoPersonal
+public class ContactoPersonal extends Contacto
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private Fecha fechaNacimiento;
 
     /**
      * Constructor for objects of class ContactoPersonal
      */
-    public ContactoPersonal()
+    public ContactoPersonal(String nombre, String telefono, int dia, int mes, int año)
     {
-        // initialise instance variables
-        x = 0;
+        super(nombre, telefono);
+        
+        fechaNacimiento = new Fecha(dia, mes, año);
     }
 
     /**
@@ -25,9 +25,30 @@ public class ContactoPersonal
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public int sampleMethod(int y)
+    public String getFechaCumpleaños()
     {
-        // put your code here
-        return x + y;
+        return fechaNacimiento.getDia() + "/" + fechaNacimiento.getMes() + "/" + fechaNacimiento.getAño();
+    }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     * 
+     * @param  y   a sample parameter for a method
+     * @return     the sum of x and y 
+     */
+    public String getFirmaEmail()
+    {
+        return "Con cariño, adios";
+    }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     * 
+     * @param  y   a sample parameter for a method
+     * @return     the sum of x and y 
+     */
+    public boolean esCumpleaños()
+    {
+        return false;
     }
 }

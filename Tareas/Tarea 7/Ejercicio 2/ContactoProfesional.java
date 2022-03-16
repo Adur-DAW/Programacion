@@ -2,21 +2,21 @@
 /**
  * Write a description of class ContactoProfesional here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Adur Marques Herrero
+ * @version 1.0.0
  */
-public class ContactoProfesional
+public class ContactoProfesional extends Contacto
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private String nombreEmpresa;
+    
     /**
      * Constructor for objects of class ContactoProfesional
      */
-    public ContactoProfesional()
+    public ContactoProfesional(String nombre, String telefono, String nombreEmpresa)
     {
-        // initialise instance variables
-        x = 0;
+        super(nombre, telefono);
+        
+        this.nombreEmpresa = nombreEmpresa;
     }
 
     /**
@@ -25,9 +25,19 @@ public class ContactoProfesional
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public int sampleMethod(int y)
+    public String getNombreEmpresa()
     {
-        // put your code here
-        return x + y;
+        return nombreEmpresa;
+    }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     * 
+     * @param  y   a sample parameter for a method
+     * @return     the sum of x and y 
+     */
+    public String getFirmaEmail()
+    {
+        return "Atentamente, un saludo";
     }
 }

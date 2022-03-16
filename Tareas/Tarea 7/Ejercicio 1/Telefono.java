@@ -6,10 +6,8 @@
  */
 public abstract class Telefono
 {
-    // instance variables - replace the example below with your own
     String numero;
 
-    
     /**
      * Constructor for objects of class TelefonoSamsung
      */
@@ -19,10 +17,10 @@ public abstract class Telefono
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Devuelve el número
      * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
+     * @param
+     * @return String
      */
     public String getNumero()
     {
@@ -30,33 +28,21 @@ public abstract class Telefono
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Devuelve un texto con el número que llama y a que número llama
      * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
+     * @param  Telefono
+     * @return String
      */
     public String llamar(Telefono telefono)
     {
-        return telefono.getNumero();
+        return "Llamando de " + getNumero() + " a " + telefono.getNumero();
     }
     
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
-     */
     public int hashCode()
     {
         return getNumero().hashCode();
     }
-    
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
-     */
+
     public boolean equals(Object objeto)
     {
         return objeto.equals(objeto);

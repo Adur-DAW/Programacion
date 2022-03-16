@@ -2,8 +2,8 @@
 /**
  * Write a description of class Fecha here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Adur Marques Herrero
+ * @version 1.0.0
  */
 public class Fecha
 {
@@ -15,8 +15,11 @@ public class Fecha
     /**
      * Constructor for objects of class Fecha
      */
-    public Fecha(String fecha)
+    public Fecha(int dia, int mes, int año)
     {
+        this.dia = dia;
+        this.mes = mes;
+        this.año = año;
     }
 
     /**

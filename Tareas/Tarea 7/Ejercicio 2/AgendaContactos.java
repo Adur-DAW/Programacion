@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Write a description of class AgendaContactos here.
@@ -8,9 +9,9 @@ import java.util.ArrayList;
  * @author Adur Marques 
  * @version 1.0.0
  */
-public class AgendaContactos
+public class AgendaContactos implements Visualizable
 {
-    private Map<String, ArrayList> agenda;
+    private HashMap<Character, ArrayList<Contacto>> agenda;
 
     /**
      * Constructor for objects of class AgendaContactos
@@ -26,10 +27,56 @@ public class AgendaContactos
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
+    public void mostrar()
+    {
+        Contacto contactoBlanca = new ContactoPersonal("Adur Marques", "948123456", 15, 4, 1970);
+        Contacto contactoBeltran = new ContactoProfesional("Beltrán Iriarte", "948456677", "Empresa 01 D.A.");
+        Contacto contactoDavid = new ContactoProfesional("David Alsúa", "948223344", "Empresa 02 S.L.");
+        Contacto contactoPepa = new ContactoPersonal("Pepa", "675435672", 15, 4, 1980);
+        Contacto contactoPablo = new ContactoPersonal("Pablo", "678897543", 12, 7, 1980);
+        
+        añadirContacto(contactoBlanca);
+        añadirContacto(contactoBeltran);
+        añadirContacto(contactoDavid);
+        añadirContacto(contactoPepa);
+        añadirContacto(contactoPablo);
+        
+        agenda.forEach((clave, contactos) -> {
+            if (hayValores(contactos))
+            {
+               System.out.println(clave);
+               
+               contactos.forEach(contacto -> {
+                   System.out.println("Nombre: " + contacto.getNombre());
+                   System.out.println("Teléfono: " + contacto.getTelefono());
+                   System.out.println(contacto.toString());
+                   
+                   if (contacto.getClass().getSimpleName() == "ContactoPersonal")
+                       System.out.println(((ContactoPersonal)contacto).getFechaCumpleaños());
+                   else
+                       System.out.println(((ContactoProfesional)contacto).getNombreEmpresa());
+               });
+            }
+    });
+    }
+    
+    /**
+     * 
+     * 
+     * @param  y   a sample parameter for a method
+     * @return     the sum of x and y 
+     */
     public void inicializarMap()
     {
-        for (char c = 'A'; c <= 'Z'; ++c) 
-          agenda.put(String.valueOf(c), new ArrayList()); 
+        agenda = new HashMap<Character, ArrayList<Contacto>>();
+        
+        char[] cadena = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'Q', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'K', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+        
+        agenda = new HashMap<Character, ArrayList<Contacto>>() {
+            {
+                for (char ch: cadena) put(ch, new ArrayList<Contacto>()); 
+            }
+        };
     }
     
     /**
@@ -40,6 +87,13 @@ public class AgendaContactos
      */
     public void añadirContacto(Contacto contacto)
     {
+        char primeraLetra = contacto.getPrimeraLetra();
+        ArrayList<Contacto> contactos = agenda.get(primeraLetra);
+        contactos.add(contacto);
+        
+        if (buscarContacto(contacto.getNombre()).size() > 1) return;
+        
+        agenda.put(primeraLetra, contactos);
     }
     
     /**
@@ -48,9 +102,19 @@ public class AgendaContactos
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public List<Contacto> buscarContacto(String nombre)
+    public ArrayList<Contacto> buscarContacto(String nombre)
     {
-        return null;
+        char primeraLetra = nombre.charAt(0);
+        
+        ArrayList<Contacto> contactos = agenda.get(primeraLetra);
+        ArrayList<Contacto> contactosEncontrados = new ArrayList<Contacto>();
+        
+        for (Contacto contacto : contactos){
+            if (contacto.getNombre().contains(nombre))
+               contactosEncontrados.add(contacto);
+        }
+        
+        return contactosEncontrados;
     }
     
     /**
@@ -59,9 +123,11 @@ public class AgendaContactos
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public List<Contacto> buscarContacto(Contacto contacto)
+    public List<Contacto> buscarContacto(Contacto contactoABuscar)
     {
-        return null;
+        String nombre = contactoABuscar.getNombre();
+        
+        return buscarContacto(nombre);
     }
     
     /**
@@ -92,7 +158,7 @@ public class AgendaContactos
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public List<ContactoPersonal> localizarCumpleaños(List<Contacto> contactosLetra)
+    private List<ContactoPersonal> localizarCumpleaños(List<Contacto> contactosLetra)
     {
         return null;
     }
@@ -114,9 +180,9 @@ public class AgendaContactos
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    private boolean hayValores(List<Contacto> valores)
+    private boolean hayValores(ArrayList<Contacto> valores)
     {
-        return false;
+        return valores.size() > 0;
     }
     
     /**
@@ -127,7 +193,7 @@ public class AgendaContactos
      */
     public int totalContactos()
     {
-        return 1;
+        return totalContactosList().size();
     }
     
     /**
@@ -138,7 +204,40 @@ public class AgendaContactos
      */
     public int totalContactosPersonales()
     {
-        return 1;
+        int cantidadContactos = 0;
+        
+        for (Contacto contacto : totalContactosList()) {
+            if (contacto.getClass().getSimpleName() == "ContactoPersonal")
+            {
+                cantidadContactos++;
+            }  
+        }
+        
+        return cantidadContactos;
+    }
+    
+    /**
+     * Devuelve el total de contactos personales que hay en la agenda
+     * 
+     * @param  y   a sample parameter for a method
+     * @return     the sum of x and y 
+     */
+    private ArrayList<Contacto> totalContactosList()
+    {
+        ArrayList<Contacto> contactosDevolver = new ArrayList<Contacto>();
+        
+        for (var entry : agenda.entrySet()) {
+            ArrayList<Contacto> contactos = entry.getValue();
+            
+            if (hayValores(contactos))
+            {
+                contactos.forEach(contacto -> 
+                    contactosDevolver.add(contacto)
+                );
+            }  
+        }
+        
+        return contactosDevolver;
     }
     
     /**
@@ -149,9 +248,21 @@ public class AgendaContactos
      */
     public Contacto[] contactosPersonalesEn(char letra)
     {
-        //Crea localmente una colección ordenada y luego convierte esa colección en un array con toArray()
-        return null;
+        ArrayList<Contacto> contactosDevolver = new ArrayList<Contacto>();
+        
+        for (var entry : agenda.entrySet()) {
+            ArrayList<Contacto> contactos = entry.getValue();
+            
+            if (hayValores(contactos))
+                contactos.forEach(contacto -> contactosDevolver.add(contacto));
+        }
+        
+        Contacto[] arr = new Contacto[contactosDevolver.size()];
+        
+        for (int i = 0; i < contactosDevolver.size(); i++) {
+             arr[i] = contactosDevolver.get(i);
+        }
+        
+        return arr;
     }
-    
-    // La agenda es un elemento que se puede visualizar en pantalla. Cualquier elemento visualizable implementa el interfaz Visualizable que incluye un único método, void mostrar().
 }

@@ -1,16 +1,16 @@
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Abstract class Persona - write a description of the class here
  * 
- * @author: 
+ * @author: Adur Marques Herrero
  * Date: 
  */
 public abstract class Persona
 {
-    // instance variables - replace the example below with your own
     String nombre;
-    List<Telefono> telefonos;
+    ArrayList<Telefono> telefonos = new ArrayList<Telefono>();
 
     /**
      * Constructor for objects of class Profesor
@@ -21,10 +21,10 @@ public abstract class Persona
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Devuelve el nombre de la persona (Estudiante/Profesor)
      * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
+     * @param
+     * @return String
      */
     public String getNombre()
     {
@@ -32,90 +32,69 @@ public abstract class Persona
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Devuelve la lista de números de la persona
      * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
+     * @param 
+     * @return String
      */
     public String getListaNumeros()
     {
-        return nombre;
+        String listaTelefonos = "";
+        
+        for(Telefono telefono: telefonos)
+        {
+            listaTelefonos = listaTelefonos + telefono.toString() + " ";
+        }
+
+        return listaTelefonos;
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Añade un número de telefono a la persona
      * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
+     * @param  Telefono
+     * @return boolean
      */
     public boolean addTelefono(Telefono telefono)
     {
-        return false;
+        return telefonos.add(telefono);
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Devuelve cuantos números de teléfono tiene la persona
      * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
+     * @param
+     * @return int
      */
     public int cuantosTelefonos()
     {
-        return 1;
+        return telefonos.size();
     }
     
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
-     */
-    public String utilizarOrdenador()
-    {
-        return "a";
-    }
-    
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
-     */
     public int hashCode()
     {
         return getNombre().hashCode();
     }
     
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
-     */
     public boolean equals(Object persona)
     {
-        return false;
+        /* No se si tengo que comprar la clase de los objectos o utilizar el equals
+            persona.getClass() == this.getClass()
+            persona.equals(this)
+        */
+        
+        return ((Persona) persona).getNombre() == getNombre();
     }
     
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
-     */
-    public int compareTo(Persona persona)
+    public String toString()
     {
-        return 2;
-    }
-    
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
-     */
-    public String toString(Persona persona)
-    {
-        return "";
+        String utilizaOrdenador = new String();
+        
+        if(this instanceof Estudiante) 
+            utilizaOrdenador = ((Estudiante)this).utilizaOrdenador();
+        else
+            utilizaOrdenador = ((Profesor)this).utilizaOrdenador();
+        
+        return "Clase: " + this.getClass().getSimpleName() + " - " + this.getNombre() + "\n" + this.getListaNumeros() + "\n" + utilizaOrdenador + "\n";
     }
 }

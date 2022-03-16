@@ -7,7 +7,6 @@
  */
 public class Profesor extends Persona implements Conferenciante
 {
-    // instance variables - replace the example below with your own
     private Dia dia;
 
     /**
@@ -20,10 +19,10 @@ public class Profesor extends Persona implements Conferenciante
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Devuelve para que utiliza el ordenador el Profesor
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param 
+     * @return String
      */
     public String utilizaOrdenador()
     {
@@ -31,35 +30,13 @@ public class Profesor extends Persona implements Conferenciante
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Devuelve que día tiene conferencia el profesor
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return String
      */
     public String diaConferencia()
     {
         return dia.toString();
-    }
-    
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
-     */
-    public boolean equals(Object persona)
-    {
-        return false;
-    }
-    
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
-     */
-    public String toString(Persona persona)
-    {
-        return "";
     }
 }

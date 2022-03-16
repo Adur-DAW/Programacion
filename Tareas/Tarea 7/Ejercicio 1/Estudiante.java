@@ -16,35 +16,13 @@ public class Estudiante extends Persona
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Devuelve para que utiliza el ordenador el Estudiante
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return String
      */
-    public String utilizarOrdenador()
+    public String utilizaOrdenador()
     {
         return "El estudiante " + getNombre() + " utiliza el ordenador para hacer prácticas de programación";
-    }
-    
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
-     */
-    public boolean equals(Object persona)
-    {
-        return false;
-    }
-    
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
-     */
-    public String toString(Persona persona)
-    {
-        return "";
     }
 }

@@ -1,23 +1,39 @@
 /**
  * Abstract class Contacto - write a description of the class here
  * 
- * @author: 
- * Date: 
+ * @author: Adur Marques Herrero
+ * Date: 15/03/2022
  */
 public abstract class Contacto
 {
-    // instance variables - replace the example below with your own
-    int x;
+    String nombre;
+    String telefono;
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y    a sample parameter for a method
-     * @return        the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    public Contacto(String nombre, String telefono)
     {
-        // put your code here
-        return x + y;
+        this.nombre = nombre;
+        this.telefono = telefono;
+    }
+    
+    public String toString()
+    {
+        String nombreClase = this.getClass().getSimpleName();
+        
+        return "Tipo contacto: " + nombreClase;
+    }
+    
+    public String getNombre()
+    {
+        return nombre;
+    }
+    
+    public String getTelefono()
+    {
+        return telefono;
+    }
+    
+    public char getPrimeraLetra()
+    {
+        return nombre.charAt(0);
     }
 }

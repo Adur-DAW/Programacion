@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Write a description of class Instituto here.
@@ -9,7 +10,7 @@ import java.util.List;
 public class Instituto
 {
     private String nombre;
-    private List<Estudiante> estudiantes;
+    private ArrayList<Persona> personas = new ArrayList<Persona>();
 
     /**
      * Constructor for objects of class Instituto
@@ -20,30 +21,32 @@ public class Instituto
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Da de alta a una persona en el centro (Estudiante/Profesor)
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  Persona
+     * @return void
      */
     public void altaPersona(Persona persona)
     {
+        personas.add(persona);
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Muestra cuantos estudiantes hay en el centro
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return void
      */
     public void mostrar()
     {
+         System.out.print(cuantosEstudiantes());
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Devuelve los profesores que tienen conferencias determinado día
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  Dia
+     * @return List<Profesor>
      */
     public List<Profesor> quienDaConferenciasEn(Dia dia)
     {
@@ -51,10 +54,10 @@ public class Instituto
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Devuelve el nombre del centro
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return String
      */
     public String getNombre()
     {
@@ -62,24 +65,40 @@ public class Instituto
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Devuelve cuantos estudiantes hay en el centro
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return int
      */
     public int cuantosEstudiantes()
     {
-        return estudiantes.size();
+        int cantidadEstudiantes = 0;
+        
+        for (Persona persona : personas) {
+            if (persona.getClass().getSimpleName() == "Estudiante")
+                cantidadEstudiantes++;
+         }
+         
+        return cantidadEstudiantes;
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Borra los estudiantes sin número de telefono del centro
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param 
+     * @return void
      */
     public void borrarEstudiantes()
     {
-        estudiantes = null;
+        List<Persona> estudiantes = new ArrayList<Persona>();
+        
+         for (Persona persona : personas) {
+            if (persona.getClass().getSimpleName() == "Estudiante" && persona.cuantosTelefonos() == 0)
+                estudiantes.add(persona);
+         }
+         
+         for (Persona estudiante : estudiantes) {
+                personas.remove(estudiante);
+         }
     }
 }

@@ -23,6 +23,6 @@ public class TelefonoNokia extends Telefono
      */
     public String toString()
     {
-        return "Nokia: " + getNumero();
+        return "Nokia (" + getNumero() + ")";
     }
 }

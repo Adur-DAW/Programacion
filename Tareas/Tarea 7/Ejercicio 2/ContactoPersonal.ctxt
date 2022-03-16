@@ -1,10 +1,16 @@
 #BlueJ class context
 comment0.target=ContactoPersonal
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ ContactoPersonal\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=ContactoPersonal()
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ContactoPersonal\ here.\r\n\ \r\n\ @author\ Adur\ Marques\ Herrero\r\n\ @version\ 1.0.0\r\n
+comment1.params=nombre\ telefono\ dia\ mes\ a\u00F1o
+comment1.target=ContactoPersonal(java.lang.String,\ java.lang.String,\ int,\ int,\ int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ContactoPersonal\r\n
-comment2.params=y
-comment2.target=int\ sampleMethod(int)
+comment2.params=
+comment2.target=java.lang.String\ getFechaCumplea\u00F1os()
 comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
-numComments=3
+comment3.params=
+comment3.target=java.lang.String\ getFirmaEmail()
+comment3.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment4.params=
+comment4.target=boolean\ esCumplea\u00F1os()
+comment4.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+numComments=5

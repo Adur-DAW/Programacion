@@ -23,6 +23,6 @@ public class TelefonoSamsung extends Telefono
      */
     public String toString()
     {
-        return "Samsung: " + getNumero();
+        return "Samsung (" + getNumero() + ")";
     }
 }
