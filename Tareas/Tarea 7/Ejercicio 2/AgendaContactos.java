@@ -2,6 +2,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Calendar;
 
 /**
  * Write a description of class AgendaContactos here.
@@ -24,8 +25,8 @@ public class AgendaContactos implements Visualizable
     /**
      * 
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param 
+     * @return void
      */
     public void mostrar()
     {
@@ -57,14 +58,14 @@ public class AgendaContactos implements Visualizable
                        System.out.println(((ContactoProfesional)contacto).getNombreEmpresa());
                });
             }
-    });
+        });
     }
     
     /**
      * 
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return void
      */
     public void inicializarMap()
     {
@@ -82,8 +83,8 @@ public class AgendaContactos implements Visualizable
     /**
      * Añade el contacto a la agenda en la letra correspondiente. Previamente se comprueba que no haya otro igual.
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return void
      */
     public void añadirContacto(Contacto contacto)
     {
@@ -99,10 +100,10 @@ public class AgendaContactos implements Visualizable
     /**
      * Localiza el/los contacto/s dado un nombre.
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return ArrayList<Contacto>
      */
-    public ArrayList<Contacto> buscarContacto(String nombre)
+    public List<Contacto> buscarContacto(String nombre)
     {
         char primeraLetra = nombre.charAt(0);
         
@@ -120,8 +121,8 @@ public class AgendaContactos implements Visualizable
     /**
      * Localiza el/los contacto/s dado un contacto
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return List<Contacto>
      */
     public List<Contacto> buscarContacto(Contacto contactoABuscar)
     {
@@ -133,52 +134,66 @@ public class AgendaContactos implements Visualizable
     /**
      * Borra un contacto
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return void
      */
     public void borrarContacto(Contacto contacto)
     {
+        char primeraLetra = contacto.getPrimeraLetra();
+        
+        ArrayList<Contacto> contactos = agenda.get(contacto.getPrimeraLetra());
+        contactos.remove(contacto);
+        
+        agenda.put(primeraLetra, contactos);
     }
     
     /**
      * Devuelve un listado de contactos personales a los que hay que felicitar porque hoy es su cumpleaños
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param 
+     * @return List<ContactoPersonal>
      */
     public List<ContactoPersonal> felicitar()
     {
-        //Puedes ayudarte del método privado localizarCumpleaños()
-        return null;
+        List<ContactoPersonal> contactosFelicitar = new ArrayList<ContactoPersonal>();
+        
+        agenda.forEach((clave, contactos) -> {
+            if (hayValores(contactos))
+                contactosFelicitar.addAll(localizarCumpleaños(contactos));
+        });
+        
+        return contactosFelicitar;
     }
     
     /**
      * Método privado de ayuda que dada la lista de contactos de una letra devuelve los contactos personales que cumplen años hoy
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return List<ContactoPersonal>
      */
     private List<ContactoPersonal> localizarCumpleaños(List<Contacto> contactosLetra)
     {
-        return null;
+        List<ContactoPersonal> contactosEncontrados = new ArrayList<ContactoPersonal>();
+        
+        for (Contacto contacto : contactosLetra){
+            if (contacto.getClass().getSimpleName() == "ContactoPersonal" && ((ContactoPersonal)contacto).esCumpleaños())
+               contactosEncontrados.add((ContactoPersonal)contacto);
+        }
+        
+        return contactosEncontrados;
     }
     
-    /**
-     * Representación textual de la agenda
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
     public String toString()
     {
+        // Me he perdido
         return null;
     }
     
     /**
      * Método privado de ayuda que dada una lista de contactos indica si está o no vacía.
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  ArrayList<Contacto>
+     * @return boolean
      */
     private boolean hayValores(ArrayList<Contacto> valores)
     {
@@ -188,8 +203,8 @@ public class AgendaContactos implements Visualizable
     /**
      * Devuelve el total de contactos que hay en la agenda
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return int
      */
     public int totalContactos()
     {
@@ -199,8 +214,8 @@ public class AgendaContactos implements Visualizable
     /**
      * Devuelve el total de contactos personales que hay en la agenda
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return int
      */
     public int totalContactosPersonales()
     {
@@ -219,8 +234,8 @@ public class AgendaContactos implements Visualizable
     /**
      * Devuelve el total de contactos personales que hay en la agenda
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param
+     * @return ArrayList<Contacto>
      */
     private ArrayList<Contacto> totalContactosList()
     {
@@ -243,8 +258,8 @@ public class AgendaContactos implements Visualizable
     /**
      * Devuelve un array con los contactos personales ordenados alfabéticamente en la letra indicada. 
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  char
+     * @return Contacto[]
      */
     public Contacto[] contactosPersonalesEn(char letra)
     {

@@ -50,7 +50,14 @@ public class Instituto
      */
     public List<Profesor> quienDaConferenciasEn(Dia dia)
     {
-        return null;
+        List<Profesor> profesores = new ArrayList<Profesor>();
+        
+        for (Persona persona : personas) {
+            if (persona.getClass().getSimpleName() == "Profesor" && ((Profesor)persona).diaConferencia() == dia.toString())
+                profesores.add((Profesor)persona);
+        }
+        
+        return profesores;
     }
     
     /**
@@ -77,7 +84,7 @@ public class Instituto
         for (Persona persona : personas) {
             if (persona.getClass().getSimpleName() == "Estudiante")
                 cantidadEstudiantes++;
-         }
+        }
          
         return cantidadEstudiantes;
     }

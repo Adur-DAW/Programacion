@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Abstract class Persona - write a description of the class here
  * 
  * @author: Adur Marques Herrero
- * Date: 
+ * Date: 10/03/2022
  */
 public abstract class Persona
 {

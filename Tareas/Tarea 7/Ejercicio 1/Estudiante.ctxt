@@ -6,5 +6,5 @@ comment1.target=Estudiante(java.lang.String)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Estudiante\r\n
 comment2.params=
 comment2.target=java.lang.String\ utilizaOrdenador()
-comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment2.text=\r\n\ Devuelve\ para\ que\ utiliza\ el\ ordenador\ el\ Estudiante\r\n\ \r\n\ @param\r\n\ @return\ String\r\n
 numComments=3

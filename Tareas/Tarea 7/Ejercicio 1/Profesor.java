@@ -15,7 +15,7 @@ public class Profesor extends Persona implements Conferenciante
     public Profesor(String nombre, Dia dia)
     {
         super(nombre);
-        dia = dia;
+        this.dia = dia;
     }
 
     /**
@@ -26,7 +26,7 @@ public class Profesor extends Persona implements Conferenciante
      */
     public String utilizaOrdenador()
     {
-        return "El profesor " + getNombre() + " utiliza el ordenador para poner notas";
+        return "El profesor " + getNombre() + " utiliza el ordenador para poner notas y da conferencias los " + diaConferencia();
     }
     
     /**

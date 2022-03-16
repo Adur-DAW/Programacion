@@ -2,7 +2,7 @@
  * Abstract class Contacto - write a description of the class here
  * 
  * @author: Adur Marques Herrero
- * Date: 15/03/2022
+ * Date: 10/03/2022
  */
 public abstract class Contacto
 {

@@ -1,3 +1,4 @@
+import java.util.Calendar;
 
 /**
  * Write a description of class ContactoPersonal here.
@@ -49,6 +50,10 @@ public class ContactoPersonal extends Contacto
      */
     public boolean esCumpleaños()
     {
-        return false;
+        Calendar cal = Calendar.getInstance();
+        int dia = cal.get(Calendar.DAY_OF_MONTH);
+        int mes = cal.get(Calendar.MONTH);
+        
+        return (fechaNacimiento.getDia() == dia && fechaNacimiento.getMes() == mes);
     }
 }
