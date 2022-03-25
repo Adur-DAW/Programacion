@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Equipo
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Equipo\ here.\r\n\ \r\n\ @author\ Adur\ Marques\ Herrero\r\n\ @version\ 1.0.0\r\n
+comment1.params=nombre
+comment1.target=Equipo(java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Equipo\r\n
+comment10.params=jugadores
+comment10.target=void\ escribir(java.util.ArrayList)
+comment11.params=
+comment11.target=Persona\ pichichi()
+comment2.params=
+comment2.target=java.lang.String\ getNombre()
+comment3.params=
+comment3.target=Entrenador\ getEntrenador()
+comment4.params=jugadores
+comment4.target=void\ addJugadores(Jugador[])
+comment5.params=nombrePersona
+comment5.target=int\ golesDe(java.lang.String)
+comment6.params=nombreJugador
+comment6.target=Persona\ buscarJugador(java.lang.String)
+comment7.params=
+comment7.target=java.util.ArrayList\ mejorPagado()
+comment8.params=
+comment8.target=void\ listarOrdenAlfab\u00E9tico()
+comment9.params=
+comment9.target=void\ listarPorSueldo()
+numComments=12

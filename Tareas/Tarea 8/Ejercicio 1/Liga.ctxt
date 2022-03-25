@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Liga
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Liga\ here.\r\n\ \r\n\ @author\ Adur\ Marques\ Herrero\r\n\ @version\ 1.0.0\r\n
+comment1.params=a\u00F1o
+comment1.target=Liga(java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Liga\r\n
+comment2.params=
+comment2.target=void\ cargarDeFichero()
+comment3.params=
+comment3.target=void\ salvarEnFichero()
+comment4.params=
+comment4.target=java.lang.String\ pichichi()
+numComments=5
