@@ -14,4 +14,14 @@ public abstract class Persona
         this.nombre = nombre;
         this.sueldo = sueldo;
     }
+    
+    public String getNombre()
+    {
+        return nombre;
+    }
+    
+    public int getSueldo()
+    {
+        return sueldo;
+    }
 }

@@ -1,0 +1,9 @@
+Real Madrid:6:Pellegrini:2
+Raúl:5:21
+Asensio:10:5
+Lunin:15:32
+
+Osasuna:6:Bittor:2
+Juan:5:21
+Unai:10:5
+Areso:15:32

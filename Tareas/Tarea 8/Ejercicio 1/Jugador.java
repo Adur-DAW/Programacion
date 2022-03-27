@@ -22,7 +22,7 @@ public class Jugador extends Persona
         golesMarcados = golesMarcadosJugador;
     }
     
-    public int getGolesMarcados(int y)
+    public int getGolesMarcados()
     {
         return golesMarcados;
     }

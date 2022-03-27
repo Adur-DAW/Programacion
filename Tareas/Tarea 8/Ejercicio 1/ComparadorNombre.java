@@ -6,10 +6,10 @@ import java.util.Comparator;
  * @author Adur Marques Herrero
  * @version 1.0.0
  */
-public class ComparadorSueldo implements Comparator<Persona> {
+public class ComparadorNombre implements Comparator<Persona> {
     
       @Override
       public int compare(Persona p1, Persona p2) {
-         return new Integer(p1.getSueldo()).compareTo(p2.getSueldo());
+         return p1.getNombre().compareTo(p2.getNombre());
       }
 }

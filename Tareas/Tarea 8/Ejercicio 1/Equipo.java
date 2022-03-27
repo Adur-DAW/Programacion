@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Write a description of class Equipo here.
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 public class Equipo
 {
     private String nombre;
-    private ArrayList<Persona> jugadores;
+    private ArrayList<Jugador> jugadores;
     private Entrenador entrenador;
 
     /**
@@ -30,18 +31,35 @@ public class Equipo
         return entrenador;
     }
     
-    public void addJugadores(Jugador[] jugadores)
+    public void addJugadores(Jugador[] nuevosJugadores)
     {
+        for(Jugador jugador : jugadores) {
+            addJugador(jugador);
+        }
+    }
+    
+    public void addJugador(Jugador nuevoJugador)
+    {
+        if (buscarJugador(nuevoJugador.getNombre()) == null) return;
         
+        jugadores.add(nuevoJugador);
     }
     
     public int golesDe(String nombrePersona)
     {
-        return 1;
+        Persona persona = buscarJugador(nombrePersona);
+        
+        if (persona == null) return -1;
+        
+        return ((Jugador)persona).getGolesMarcados();
     }
     
     private Persona buscarJugador(String nombreJugador)
     {
+        for(Persona jugador : jugadores) {
+            if(jugador.getNombre() == nombreJugador)
+                return jugador;
+        }
         return null;
     }
     
@@ -52,21 +70,23 @@ public class Equipo
     
     public void listarOrdenAlfabético()
     {
-       
+       Collections.sort(jugadores, new ComparadorNombre());
     }
     
     public void listarPorSueldo()
     {
-        
+        Collections.sort(jugadores, new ComparadorSueldo());
     }
     
     private void escribir(ArrayList<Persona> jugadores)
     {
-        
+        for(Persona jugador : jugadores) {
+          System.out.println(jugador.getNombre());
+        }
     }
     
     public Persona pichichi()
     {
-        return null;
+        return Collections.max(jugadores, Comparator.comparing(j -> j.getGolesMarcados()));
     }
 }
