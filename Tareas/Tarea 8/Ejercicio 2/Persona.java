@@ -1,9 +1,16 @@
+/**
+ * Write a description of class Nomina here.
+ * 
+ * @author Adur Marques Herrero
+ * @version (a version number or a date)
+ */
 public class Persona implements Comparable {
     private String nombre;
     private String apellido;
     private long dni;
     
-    public Persona (String nombre, String apellido, long dni){
+    public Persona (String nombre, String apellido, long dni)
+    {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;

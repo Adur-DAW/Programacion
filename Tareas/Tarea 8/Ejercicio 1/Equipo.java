@@ -10,7 +10,7 @@ import java.util.*;
 public class Equipo
 {
     private String nombre;
-    private ArrayList<Jugador> jugadores;
+    private ArrayList<Jugador> jugadores = new ArrayList();
     private Entrenador entrenador;
 
     /**
@@ -33,14 +33,14 @@ public class Equipo
     
     public void addJugadores(Jugador[] nuevosJugadores)
     {
-        for(Jugador jugador : jugadores) {
+        for(Jugador jugador : nuevosJugadores) {
             addJugador(jugador);
         }
     }
     
     public void addJugador(Jugador nuevoJugador)
     {
-        if (buscarJugador(nuevoJugador.getNombre()) == null) return;
+        if (buscarJugador(nuevoJugador.getNombre()) != null) return;
         
         jugadores.add(nuevoJugador);
     }
@@ -56,11 +56,18 @@ public class Equipo
     
     private Persona buscarJugador(String nombreJugador)
     {
+        if (!hayJugadores()) return null;
+        
         for(Persona jugador : jugadores) {
             if(jugador.getNombre() == nombreJugador)
                 return jugador;
         }
         return null;
+    }
+    
+    private boolean hayJugadores()
+    {
+        return jugadores.size() > 0;
     }
     
     public ArrayList<Persona> mejorPagado()
@@ -70,23 +77,33 @@ public class Equipo
     
     public void listarOrdenAlfabético()
     {
+       ArrayList jugadoresOrdenados = jugadores;
+       
        Collections.sort(jugadores, new ComparadorNombre());
+        
+       escribir(jugadoresOrdenados);
     }
     
     public void listarPorSueldo()
     {
-        Collections.sort(jugadores, new ComparadorSueldo());
+        ArrayList jugadoresOrdenados = jugadores;
+        
+        Collections.sort(jugadoresOrdenados, new ComparadorSueldo());
+        
+        escribir(jugadoresOrdenados);
     }
     
     private void escribir(ArrayList<Persona> jugadores)
     {
         for(Persona jugador : jugadores) {
-          System.out.println(jugador.getNombre());
+          System.out.println("Nombre: " + jugador.getNombre() + " - Sueldo: " + jugador.getSueldo() + " - Goles: " + ((Jugador)jugador).getGolesMarcados());
         }
     }
     
     public Persona pichichi()
     {
+        if (!hayJugadores()) return null;
+        
         return Collections.max(jugadores, Comparator.comparing(j -> j.getGolesMarcados()));
     }
 }

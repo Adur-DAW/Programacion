@@ -14,7 +14,10 @@ public class Nomina {
     
     public Nomina(double sueldoBase, double primas, double comisiones, double retenciones)
     {
-
+        this.sueldoBase = sueldoBase;
+        this.primas = primas;
+        this.comisiones = comisiones;
+        this.retenciones = retenciones;
     }
     
     public double getSueldoBase()

@@ -20,10 +20,10 @@ public class TryHashtable {
         nominas.put(new Persona("Ioseba", "Errazu",
         25), new Nomina(12, 73, 31, 20));
         //Recibir un objeto Nomina
-        Nomina n1 = (Nomina)nominas.get(new Persona("Manuel", "Irigoyen",
-        24));
+        Nomina n1 = (Nomina)nominas.get(new Persona("Manuel", "Irigoyen",24));
         //Recibir todas las claves utilizadas
-        for (Enumeration e = nominas.keys(); e.hasMoreElements();){
+        for (Enumeration e = nominas.keys(); e.hasMoreElements();)
+        {
             Persona p = (Persona)e;
             System.out.println("La persona:");
             System.out.println(p.getNombre());

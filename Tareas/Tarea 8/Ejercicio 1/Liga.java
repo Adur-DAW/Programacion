@@ -14,11 +14,11 @@ import java.util.Map;
  */
 public class Liga
 {
-    // instance variables - replace the example below with your own
     private String año;
-    private TreeMap<String, Equipo> equipos;
+    private TreeMap<String, Equipo> equipos = new TreeMap<String, Equipo>();
     
-    static final String nombreArchivo = "equipos.txt";
+    static final String archivoEquipos = "equipos.txt";
+    static final String archivoSalida = "salida.txt";
 
     /**
      * Constructor for objects of class Liga
@@ -31,25 +31,33 @@ public class Liga
     public void cargarDeFichero() throws java.io.FileNotFoundException
     {
         try {
-            BufferedReader entrada = new BufferedReader(new FileReader(nombreArchivo));
+            BufferedReader entrada = new BufferedReader(new FileReader(archivoEquipos));
             String linea = entrada.readLine();
+            
+            String nombreEquipo = null;
             
             while (linea != null)
             {
-                System.out.println(linea);
-                
                 String[] partes = linea.split(":");
                 
                 if (partes.length == 4)
                 {
                     Equipo equipo = new Equipo(partes[0]);
-                    Entrenador entrenador = new Entrenador(partes[3], Integer.parseInt(partes[4]), equipo);
-                }
-                else 
-                {
-                    Map.Entry<String, Equipo> lastEntry = equipos.lastEntry();
+                    Entrenador entrenador = new Entrenador(partes[2], Integer.parseInt(partes[3]), equipo);
                     
-                    Jugador jugador = new Jugador(partes[0], Integer.parseInt(partes[1]), equipo);
+                    nombreEquipo = equipo.getNombre();
+                    
+                    equipos.put(equipo.getNombre(), equipo);
+                }
+                else if (partes.length == 3)
+                {
+                    Equipo ultimoEquipo =  equipos.get(nombreEquipo);
+                    
+                    Jugador jugador = new Jugador(partes[0], Integer.parseInt(partes[1]), ultimoEquipo);
+                    
+                    ultimoEquipo.addJugador(jugador);
+                    
+                    equipos.put(nombreEquipo, ultimoEquipo);
                 }
                 
                 linea = entrada.readLine();
@@ -64,13 +72,23 @@ public class Liga
     public void salvarEnFichero()
     {
         try {
-            BufferedWriter entrada = new BufferedWriter(new FileWriter(nombreArchivo));
+            BufferedWriter entrada = new BufferedWriter(new FileWriter(archivoSalida));
            
-            for (var entry : equipos.entrySet()) {
-                System.out.println(entry.getKey() + "/" + entry.getValue());
+            for (var entry : equipos.entrySet()) 
+            {
+                Equipo equipo = entry.getValue();
                 
-                 entrada.write(entry.getValue().getNombre());
+                Persona pichichi = equipo.pichichi();
+                
+                if (pichichi != null) 
+                    entrada.write(equipo.getNombre() + " - " + pichichi.getNombre());
+                else 
+                    entrada.write("Error");
+                    
+                entrada.newLine();
             }
+            
+            entrada.close();
         }
         catch(IOException e)
         {

@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Persona
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Nomina\ here.\r\n\ \r\n\ @author\ Adur\ Marques\ Herrero\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=nombre\ apellido\ dni
 comment1.target=Persona(java.lang.String,\ java.lang.String,\ long)
 comment2.params=
