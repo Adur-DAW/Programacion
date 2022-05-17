@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Tarea 1/Tarea 1.iml" filepath="$PROJECT_DIR$/Tarea 1/Tarea 1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 2/Tarea 2.iml" filepath="$PROJECT_DIR$/Tarea 2/Tarea 2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 3/Tarea 3.iml" filepath="$PROJECT_DIR$/Tarea 3/Tarea 3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 4/Tarea 4.iml" filepath="$PROJECT_DIR$/Tarea 4/Tarea 4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 5/Tarea 5.iml" filepath="$PROJECT_DIR$/Tarea 5/Tarea 5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 6/Tarea 6.iml" filepath="$PROJECT_DIR$/Tarea 6/Tarea 6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 7/Tarea 7.iml" filepath="$PROJECT_DIR$/Tarea 7/Tarea 7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 8/Tarea 8.iml" filepath="$PROJECT_DIR$/Tarea 8/Tarea 8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 9/Tarea 9.iml" filepath="$PROJECT_DIR$/Tarea 9/Tarea 9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Tareas.iml" filepath="$PROJECT_DIR$/.idea/Tareas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/build/build.iml" filepath="$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/build/build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/main/core-api/core-api.iml" filepath="$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/main/core-api/core-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/main/core-impl/core-impl.iml" filepath="$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/main/core-impl/core-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/demo/demo.iml" filepath="$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/generated/generated.iml" filepath="$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/generated/generated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/legacy/legacy.iml" filepath="$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/legacy/legacy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/main/protocol-impl/protocol-impl.iml" filepath="$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/main/protocol-impl/protocol-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 10/tarea10/tarea10.iml" filepath="$PROJECT_DIR$/Tarea 10/tarea10/tarea10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/test/test.iml" filepath="$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/main/user-api/user-api.iml" filepath="$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/main/user-api/user-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/main/user-impl/user-impl.iml" filepath="$PROJECT_DIR$/Tarea 10/tarea10/lib/mysql-connector-java-8.0.29/src/main/user-impl/user-impl.iml" />
+    </modules>
+  </component>
+</project>
